@@ -1,0 +1,57 @@
+/* ตั้งค่าสีพื้นหลัง และฟอนต์ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #F9F5F6; /* สีพื้นหลัง */
+    color: #333; /* สีข้อความ */
+}
+
+/* สไตล์ของ Header */
+header {
+    background-color: #FDCEDE; /* สีชมพูเข้ม */
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+/* Section (แต่ละส่วน) */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    background: #F8E8EE; /* สีชมพูอ่อน */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+/* หัวข้อ */
+h1, h2 {
+    color: #FDCEDE; /* สีชมพูเข้ม */
+}
+
+/* กล่องโปรเจกต์ */
+.project {
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid #FDCEDE; /* ขอบสีชมพูเข้ม */
+    border-radius: 8px;
+    background-color: #F9F5F6; /* สีพื้นหลังขาวชมพู */
+}
+
+/* ปุ่ม (ถ้าต้องการเพิ่มปุ่มในอนาคต) */
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #F2BED1; /* สีชมพูสด */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #FDCEDE; /* สีชมพูเข้ม */
+}

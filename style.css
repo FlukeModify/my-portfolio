@@ -1,57 +1,266 @@
-/* ตั้งค่าสีพื้นหลัง และฟอนต์ */
-body {
-    font-family: Arial, sans-serif;
+/* ======== Reset Styles ======== */
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
-    background-color: #F9F5F6; /* สีพื้นหลัง */
-    color: #333; /* สีข้อความ */
+    box-sizing: border-box;
 }
 
-/* สไตล์ของ Header */
-header {
-    background-color: #FDCEDE; /* สีชมพูเข้ม */
-    color: white;
-    padding: 20px;
+/* ======== General Styles ======== */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ======== Navigation Bar ======== */
+nav {
+    background-color: #333;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ให้โลโก้อยู่ซ้าย เมนูอยู่ขวา */
+    
+}
+
+/* logo */
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #F2BED1;
+    transition: transform 0.3s ease-in-out;
+}
+.logo span {
     font-size: 24px;
-}
-
-/* Section (แต่ละส่วน) */
-section {
-    margin: 20px auto;
-    padding: 20px;
-    background: #F8E8EE; /* สีชมพูอ่อน */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-}
-
-/* หัวข้อ */
-h1, h2 {
-    color: #ff9cbd; /* สีชมพูเข้ม */
-}
-
-/* กล่องโปรเจกต์ */
-.project {
-    margin: 10px 0;
-    padding: 15px;
-    border: 2px solid #FDCEDE; /* ขอบสีชมพูเข้ม */
-    border-radius: 8px;
-    background-color: #F9F5F6; /* สีพื้นหลังขาวชมพู */
-}
-
-/* ปุ่ม (ถ้าต้องการเพิ่มปุ่มในอนาคต) */
-.button {
-    display: inline-block;
-    padding: 10px 15px;
-    margin-top: 10px;
-    background-color: #F2BED1; /* สีชมพูสด */
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
     color: white;
+    margin-left: 10px;  /* เว้นช่องว่างจากโลโก้ */
+}
+/* เพิ่ม Animation เวลาเอาเมาส์ไปชี้ */
+.logo:hover {
+    transform: scale(1.1) rotate(3deg); /* ✅ ขยายและเอียงนิดๆ */
+}
+.logo::after {
+    content: "|";
+    animation: typing 1s infinite;
+}
+.logo {
+    text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF1493;
+}
+@keyframes typing {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.logo {
+    animation: bounce 1.5s infinite alternate;
+}
+/* แก้ไขเมนูให้อยู่แนวนอนและจัดวางให้ถูกต้อง */
+nav ul {
+    display: flex; /* ให้เมนูเรียงแนวนอน */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ระยะห่างระหว่างเมนู */
+nav ul li {
+    margin-left: 20px;
+}
+
+/* เมนู */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* ทำให้โลโก้ขยายขึ้นเมื่อโฮเวอร์ */
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* เมนูแต่ละตัว */
+nav ul li {
+    margin: 0 20px;
+}
+
+/* ลิงก์ของเมนู */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* โลโก้ */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #F2BED1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* เมนู */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #F2BED1;
+}
+
+/* ======== Hero Section ======== */
+.hero {
+    background-color: #f2bed1;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 50px;
+    color: white;
+}
+
+.hero p {
+    font-size: 20px;
+    color: white;
+    margin: 20px 0;
+}
+
+/* ภาพใน Hero Section */
+.main-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ปุ่ม Call to Action */
+.cta-button {
+    background-color: #fdcede;
+    color: #333;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 }
 
-.button:hover {
-    background-color: #FDCEDE; /* สีชมพูเข้ม */
+/* ======== About Section ======== */
+#about {
+    padding: 50px;
+    text-align: center;
+    background-color: #f8e8ee;
+}
+
+#about h2 {
+    font-size: 36px;
+    color: #fdcede;
+}
+
+/* ======== Projects Section ======== */
+#projects {
+    padding: 50px;
+    text-align: center;
+    background-color: #f9f5f6;
+}
+
+#projects h2 {
+    font-size: 36px;
+    color: #fdcede;
+}
+
+/* กล่องโปรเจกต์ */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    background-color: #fff;
+    border: 2px solid #fdcede;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.project h3 {
+    margin: 15px 0;
+    color: #fdcede;
+}
+
+/* ======== Contact Section ======== */
+#contact {
+    padding: 50px;
+    text-align: center;
+    background-color: #f8e8ee;
+}
+
+#contact h2 {
+    font-size: 36px;
+    color: #fdcede;
+}
+
+#contact a {
+    background-color: #f2bed1;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ======== Responsive Styles (Mobile) ======== */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
 }

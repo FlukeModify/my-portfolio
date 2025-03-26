@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>หน้าแรก - My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Thanadol Makyoy</h1>
-        <p>ตำแหน่ง / อาชีพของคุณ</p>
-    </header>
+
+        
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+            <span>Thanadol Makyoy</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#">ข้อมูลส่วนตัว</a></li>
+            <li><a href="#">พอร์ตโฟลิโอ</a></li>
+            <li><a href="#">ผลงาน</a></li>
+            <li><a href="#">อื่นๆ</a></li>
+        </ul>
+    </nav>
     
-    <section id="about">
-        <h2>เกี่ยวกับฉัน</h2>
-        <p>ข้อมูลเกี่ยวกับตัวคุณ เช่น ประสบการณ์ ทักษะ และสิ่งที่คุณสนใจ</p>
-    </section>
-
-    <section id="projects">
-        <h2>ผลงาน</h2>
-        <div class="project">
-            <h3>โปรเจกต์ 1</h3>
-            <p>คำอธิบายโปรเจกต์</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <img src="images/main.jpg" alt="main img" class="main-img"> 
+            <p>I am a web developer passionate about building amazing websites.</p>
+           
+            <a href="ติดต่อ.html" class="cta-button">Contact and Follow</a>
         </div>
-        <div class="project">
-            <h3>โปรเจกต์ 2</h3>
-            <p>คำอธิบายโปรเจกต์</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>ติดต่อ</h2>
-        <p>Email: your-email@example.com</p>
     </section>
 </body>
 </html>

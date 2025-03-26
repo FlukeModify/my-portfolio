@@ -7,29 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-        
+    <div class="cursor"></div>  <!-- จุดกลมของเคอร์เซอร์ -->
+    <script src="script.js"></script> <!-- ให้โหลดสคริปต์ท้ายสุด -->
     <!-- Navigation Bar -->
     <nav>
-        <div class="logo">
+        <a href="index.html" class="logo">
             <img src="images/logo.jpg" alt="Logo">
             <span>Thanadol Makyoy</span>
-        </div>
+        </a>
         <ul class="nav-links">
-            <li><a href="#">หน้าแรก</a></li>
-            <li><a href="#">ข้อมูลส่วนตัว</a></li>
-            <li><a href="#">พอร์ตโฟลิโอ</a></li>
-            <li><a href="#">ผลงาน</a></li>
-            <li><a href="#">อื่นๆ</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="classroom.html">Classroom</a></li>
+            <li><a href="performance.html">Performance</a></li>
+            <li><a href="another.html">Other</a></li>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+            <li><i class="fa-solid fa-magnifying-glass search-icon" onclick="toggleSearch()"></i>
+                <input type="text" id="search-box" class="search-box" placeholder="Search..."></li>
+                <li><i class="fa-solid fa-moon dark-mode-toggle"></i></li> <!-- ปุ่ม Dark Mode -->
         </ul>
     </nav>
-    
+</body>
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Welcome to My Portfolio</h1>
             <img src="images/main.jpg" alt="main img" class="main-img"> 
-            <p>I am a web developer passionate about building amazing websites.</p>
+            <p>I am a student studying in the Faculty of Education, Computer Studies Program, and this website helps me to get to know myself better.</p>
            
             <a href="ติดต่อ.html" class="cta-button">Contact and Follow</a>
         </div>

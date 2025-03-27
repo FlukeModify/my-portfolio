@@ -1,7 +1,6 @@
-//ป็อบอัพ
 document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("welcome-popup");
-    
+
     // ตรวจสอบว่าเคยแสดง Popup ไปแล้วหรือไม่
     if (!localStorage.getItem("popupShown")) {
         popup.classList.remove("hidden"); // แสดง Popup
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // ตั้งค่าให้ซ่อน Popup หลัง 5 วินาที
         setTimeout(function () {
             popup.classList.add("hidden");
-        }, 5000);
+        }, 3000);
 
         // บันทึกลง LocalStorage ว่า Popup เคยแสดงไปแล้ว
         localStorage.setItem("popupShown", "true");
@@ -20,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         popup.classList.add("hidden");
     });
 });
+
 //โหมดมืด
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;

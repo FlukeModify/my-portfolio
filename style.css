@@ -93,6 +93,26 @@ body {
     pointer-events: none; /* ป้องกันการคลิก */
     transition: opacity 0.5s ease-in-out;
 }
+/* สไตล์ที่ปรับขนาดเมื่อหน้าจอเล็ก (มือถือ) */
+@media (max-width: 600px) {
+    .popup-content h2 {
+        font-size: 24px; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    }
+
+    .popup-content p {
+        font-size: 14px; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    }
+}
+
+@media (max-width: 400px) {
+    .popup-content h2 {
+        font-size: 20px; /* ขนาดตัวอักษรเล็กลงมากขึ้นสำหรับมือถือขนาดเล็ก */
+    }
+
+    .popup-content p {
+        font-size: 12px; /* ขนาดตัวอักษรเล็กลงมากขึ้นสำหรับมือถือขนาดเล็ก */
+    }
+}
 /* ======== Navigation Bar ======== */
 nav {
     background: rgba(51, 51, 51, 0.9); /* สีเทาเข้ม + โปร่งแสงเล็กน้อย */

@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>หน้าแรก - My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
+    <div id="welcome-popup" class="popup">
+        <div class="popup-content">
+            <h2>Welcome!</h2>
+            <p>ยินดีต้อนรับเข้าสู่เว็บไซต์ของเรา</p>
+        
+        </div>
+    </div>
     <div class="cursor"></div>  <!-- จุดกลมของเคอร์เซอร์ -->
     <script src="script.js"></script> <!-- ให้โหลดสคริปต์ท้ายสุด -->
     <!-- Navigation Bar -->
@@ -17,7 +25,16 @@
         </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
+
+            <li class="dropdown">
+                <a href="About.html" class="dropdown-toggle" onclick="location.href='About.html'">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="About.html"> ⭐ ประวัติส่วนตัว</a></li>
+                    <li><a href="About.html"> ⭐ ประวัติการศึกษา</a></li>
+                    <li><a href="About.html"> ⭐ ประวัติการทำงาน</a></li>
+                </ul>
+            </li>
+            
             <li><a href="classroom.html">Classroom</a></li>
             <li><a href="performance.html">Performance</a></li>
             <li><a href="another.html">Other</a></li>
@@ -29,6 +46,7 @@
         </ul>
     </nav>
 </body>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">

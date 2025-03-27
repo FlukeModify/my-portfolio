@@ -11,7 +11,88 @@ body {
     line-height: 1.6;
   
 }
+/* สไตล์สำหรับ Popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* พื้นหลังดำโปร่งแสง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* ทำให้จางหายไปอย่างนุ่มนวล */
+    animation: fadeIn 1s ease-in-out; /* เพิ่มแอนิเมชันตอนแสดง */
 
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.popup-content {
+
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    animation: scaleUp 0.5s ease-in-out; /* เพิ่มแอนิเมชันขยายตัว */
+}
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+.popup-content h2 {
+    font-size: 256px;
+    font-weight: bold;
+    color: #b02a6b;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+    font-family: 'Poppins', sans-serif; /* ใช้ฟอนต์สวย */
+    animation: bounce 1s infinite alternate ease-in-out; /* ทำให้ขยับขึ้น-ลง */
+    animation: pulse 1.5s infinite alternate ease-in-out; /* ทำให้ขยาย-ลดขนาด */
+}
+.popup-content p {
+    font-size: 128px;
+    color: #d63384;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+    font-family: 'Poppins', sans-serif; /* ใช้ฟอนต์สวย */
+    animation: bounce 1s infinite alternate ease-in-out; /* ทำให้ขยับขึ้น-ลง */
+    animation: pulse 1.5s infinite alternate ease-in-out; /* ทำให้ขยาย-ลดขนาด */
+}
+/* ทำให้หัวข้อขยาย-ลดขนาด */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* ทำให้ข้อความย่อยขยับขึ้น-ลง */
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+/* ซ่อน Popup */
+.hidden {
+    opacity: 0;
+    pointer-events: none; /* ป้องกันการคลิก */
+    transition: opacity 0.5s ease-in-out;
+}
 /* ======== Navigation Bar ======== */
 nav {
     background: rgba(51, 51, 51, 0.9); /* สีเทาเข้ม + โปร่งแสงเล็กน้อย */
@@ -245,6 +326,51 @@ nav ul li a {
 }
 .dark-mode .cta-button {
     background-color: #333;
+}
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #494949;
+    top: 100%;
+    left: 0;
+    min-width: 250px;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    line-height: 35px
+}
+
+.dropdown-menu li {
+    padding: 10;
+}
+
+.dropdown-menu li a {
+    color: white;
+    display: block;
+    padding: 5px 10px;
+}
+
+/* แสดงเมนูเมื่อกด */
+
+/* แสดงเมนูเมื่อเอาเมาส์ไปวาง */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* ลูกศรหมุนเมื่อเปิด */
+
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
 }
 /* ======== Hero Section ======== */
 .hero {

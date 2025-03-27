@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ข้อมูลส่วนตัว Me - My Portfolio</title>
+    <title>หน้าแรก - My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="cursor"></div>  <!-- จุดกลมของเคอร์เซอร์ -->
+    <script src="script.js"></script> <!-- ให้โหลดสคริปต์ท้ายสุด -->
     <!-- Navigation Bar -->
     <nav>
         <a href="index.html" class="logo">
@@ -15,18 +17,33 @@
         </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="classroom.html">classroom</a></li>
+
+            <li class="dropdown">
+                <a href="About.html" class="dropdown-toggle" onclick="location.href='About.html'">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="About.html"> ⭐ ประวัติส่วนตัว</a></li>
+                    <li><a href="About.html"> ⭐ ประวัติการศึกษา</a></li>
+                    <li><a href="About.html"> ⭐ ประวัติการทำงาน</a></li>
+                </ul>
+            </li>
+           
+            <li><a href="classroom.html">Classroom</a></li>
             <li><a href="performance.html">Performance</a></li>
             <li><a href="another.html">Other</a></li>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+            <li><i class="fa-solid fa-magnifying-glass search-icon" onclick="toggleSearch()"></i>
+                <input type="text" id="search-box" class="search-box" placeholder="Search..."></li>
+                <li><i class="fa-solid fa-moon dark-mode-toggle"></i></li> <!-- ปุ่ม Dark Mode -->
         </ul>
     </nav>
-    
-    <!-- About Section -->
-    <section id="ข้อมูลส่วนตัว">
-        <h2>About Me</h2>
-        <p>I am a passionate developer who loves working on new and exciting projects. I have experience with HTML, CSS, JavaScript, and more.</p>
-    </section>
+</body>
+
+    <!-- Sections -->
+    <section id="personal-history"><h2>ประวัติส่วนตัว</h2><p>รายละเอียด...</p></section>
+    <section id="education-history"><h2>ประวัติการศึกษา</h2><p>รายละเอียด...</p></section>
+    <section id="work-history"><h2>ประวัติการทำงาน</h2><p>รายละเอียด...</p></section>
+
+    <script src="script.js"></script>
 </body>
 </html>
-<article>

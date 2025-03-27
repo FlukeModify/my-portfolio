@@ -1,16 +1,48 @@
+//ป็อบอัพ
 document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("welcome-popup");
+    
+    // ตรวจสอบว่าเคยแสดง Popup ไปแล้วหรือไม่
+    if (!localStorage.getItem("popupShown")) {
+        popup.classList.remove("hidden"); // แสดง Popup
 
-    // ตั้งเวลาให้ปิดเองหลัง 5 วินาที
-    setTimeout(function () {
-        popup.classList.add("hidden");
-    }, 3000);
+        // ตั้งค่าให้ซ่อน Popup หลัง 5 วินาที
+        setTimeout(function () {
+            popup.classList.add("hidden");
+        }, 5000);
 
-    // ปิด Popup เมื่อคลิกที่ใดก็ได้
+        // บันทึกลง LocalStorage ว่า Popup เคยแสดงไปแล้ว
+        localStorage.setItem("popupShown", "true");
+    }
+
+    // ปิด Popup ทันทีเมื่อคลิกที่ใดก็ได้
     popup.addEventListener("click", function () {
         popup.classList.add("hidden");
     });
 });
+//โหมดมืด
+document.addEventListener("DOMContentLoaded", function () {
+    const body = document.body;
+    const darkModeToggle = document.getElementById("dark-mode-toggle"); // ปุ่มสลับโหมดมืด
+
+    // ตรวจสอบค่าใน LocalStorage
+    if (localStorage.getItem("theme") === "dark" || localStorage.getItem("theme") === null) {
+        body.classList.add("dark-mode"); // เปิดโหมดมืดเป็นค่าเริ่มต้น
+        localStorage.setItem("theme", "dark"); // บันทึกค่าเริ่มต้น
+    }
+
+    // เมื่อคลิกปุ่มให้สลับโหมด
+    darkModeToggle.addEventListener("click", function () {
+        if (body.classList.contains("dark-mode")) {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light"); // บันทึกโหมดสว่าง
+        } else {
+            body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark"); // บันทึกโหมดมืด
+        }
+    });
+});
+
 document.addEventListener("mousemove", (e) => {
     const cursor = document.querySelector(".cursor");
     cursor.style.left = `${e.clientX}px`;

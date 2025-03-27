@@ -104,15 +104,7 @@ body {
     }
 }
 
-@media (max-width: 400px) {
-    .popup-content h2 {
-        font-size: 20px; /* ขนาดตัวอักษรเล็กลงมากขึ้นสำหรับมือถือขนาดเล็ก */
-    }
 
-    .popup-content p {
-        font-size: 12px; /* ขนาดตัวอักษรเล็กลงมากขึ้นสำหรับมือถือขนาดเล็ก */
-    }
-}
 /* ======== Navigation Bar ======== */
 nav {
     background: rgba(51, 51, 51, 0.9); /* สีเทาเข้ม + โปร่งแสงเล็กน้อย */
@@ -146,15 +138,19 @@ nav {
 }
 .logo::after {
     content: "|";
-    animation: typing 1s infinite;
+    animation: typing 1s steps(10) 1s infinite, blink-caret 0.75s step-end infinite;
+    /* "steps(10)" คือการแบ่งข้อความเป็น 10 ขั้นตอน การพิมพ์แต่ละตัว */
 }
+
 .logo {
     text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF1493;
+    animation: bounce 1.5s infinite alternate;
 }
 @keyframes typing {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }

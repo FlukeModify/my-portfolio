@@ -1,20 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("welcome-popup");
 
-    // ตรวจสอบว่าเคยแสดง Popup ไปแล้วหรือไม่
-    if (!localStorage.getItem("popupShown")) {
-        popup.classList.remove("hidden"); // แสดง Popup
+    // ตั้งเวลาให้ปิดเองหลัง 5 วินาที
+    setTimeout(function () {
+        popup.classList.add("hidden");
+    }, 3000);
 
-        // ตั้งค่าให้ซ่อน Popup หลัง 5 วินาที
-        setTimeout(function () {
-            popup.classList.add("hidden");
-        }, 3000);
-
-        // บันทึกลง LocalStorage ว่า Popup เคยแสดงไปแล้ว
-        localStorage.setItem("popupShown", "true");
-    }
-
-    // ปิด Popup ทันทีเมื่อคลิกที่ใดก็ได้
+    // ปิด Popup เมื่อคลิกที่ใดก็ได้
     popup.addEventListener("click", function () {
         popup.classList.add("hidden");
     });
